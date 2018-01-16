@@ -1,0 +1,27 @@
+{
+  "name": "jsfwk-html-to-js-transpiller",
+  "version": "0.9.9",
+  "description": "Module that transpiles HTML into JS FWK javascript widget",
+  "main": "transpiller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielMazurkiewicz/jsfwk-html-to-js-transpiller.git"
+  },
+  "keywords": [
+    "jswfk",
+    "javascript",
+    "js",
+    "fwk",
+    "html",
+    "transpiller"
+  ],
+  "author": "Daniel Mazurkiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanielMazurkiewicz/jsfwk-html-to-js-transpiller/issues"
+  },
+  "homepage": "https://github.com/DanielMazurkiewicz/jsfwk-html-to-js-transpiller#readme"
+}
