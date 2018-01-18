@@ -1,0 +1,46 @@
+<style>
+    .green {
+        color: green;
+    }
+    .test > div {
+        color: red;
+    }
+    @media screen and (min-width: 480px) {
+        .width {
+            color: blue;
+        }
+    }
+</style>
+
+<script static>
+    let widget = require('widget');
+</script>
+
+<script before>
+    alert('Wiget execution begins');
+</script>
+
+<script after>
+    alert('Widget execution ends');
+</script>
+
+<div(main) class=[test]>
+    <div(@title)/>
+    <div(@content)/>
+    <^widget src>
+        <@title></@title>
+    </^widget>
+    <button(btnPlusOne)/>
+</div>
+
+<script(=customAttribute) set visible>
+    console.log(value);
+</script>
+
+<script(=customAttribute) get>
+    return 'hello';
+</script>
+
+<script(&click, btnPlusOne)>
+    alert('button clicked');
+</script>
