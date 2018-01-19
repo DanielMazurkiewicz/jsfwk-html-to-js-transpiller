@@ -87,7 +87,7 @@ This example will assign a 'click' event to button named plusOne;
 
 ### <STYLE>
 
-Styles must have named selectors. Names of selectors becomes available to HTML elements as locak variables
+Styles must have named selectors. Names of selectors becomes available to HTML elements as local static variables
 
 Example:
 ```html
@@ -108,11 +108,11 @@ Example:
 <div class=[red,green,blue]>
 ```
 
-Note the usage of class, and that styles will produce variables:
+_NOTE the usage of class attribute and that styles will produce static variables so remember not to create other variables and constants with same name and once you change a value of such a variable, a new value will apply to every new instance of widget_
 ```javascript
 let red, green, blue;
 ```
-so remember not to create other variables and constants with same name
+
 
 ### <^...>
 
@@ -168,5 +168,5 @@ Example
 ```
 
 
-##Check example to see how it works:
+## Check example to see how it works:
 [JS FWK html example on github](https://github.com/DanielMazurkiewicz/jsfwk-app-example-html)
