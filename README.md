@@ -163,10 +163,10 @@ Example:
 
 #### <...(@...)>
 
-This creates named HTML element, a variable for quick access to element and a placeholder in widget.
+This creates widget's placeholder and named HTML element (a variable for quick access to element).
 Default placeholder for appending new elements to widget is 'main' element, but if you wish to change it define '@content' placeholder.
 
-Example
+Example:
 ```html
 <div(main)>
     <div(@leftPanel)/>
@@ -175,5 +175,5 @@ Example
 ```
 _NOTE that it also creates variables for quick access to placeholders_
 
-## Check example to see how it works:
+## Check example to see it in action:
 [JS FWK html example on github](https://github.com/DanielMazurkiewicz/jsfwk-app-example-html)
