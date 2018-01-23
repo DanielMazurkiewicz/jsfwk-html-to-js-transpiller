@@ -27,12 +27,25 @@ Example:
 
 #### AFTER
 
-Code in given script will execute before widget DOM is build
+Code in given script will execute after widget DOM is build
 
 Example:
 ```html
 <script after>
     alert('Widget execution ends');
+</script>
+```
+
+#### STATIC AFTER
+
+Code in given script will be executed once, on module load, but after widget instantiation.
+
+Example:
+```html
+<script static after>
+    module.exports.widgetManifest = {
+      name: 'Hello kitty ;-)'
+    }
 </script>
 ```
 
