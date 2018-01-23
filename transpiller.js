@@ -365,7 +365,7 @@ module.exports = (str, fwkVarName) => {
   result += 'return main;}';
 
   if (scriptsStaticAfter.length) {
-    result += scriptsStaticAfter.map(element=>element.content).join('\n') + '\n';
+    result += '\n'+ scriptsStaticAfter.map(element=>element.content).join('\n') + '\n';
   }
 
   return result;

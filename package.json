@@ -1,6 +1,6 @@
 {
   "name": "jsfwk-html-to-js-transpiller",
-  "version": "0.9.15",
+  "version": "0.9.16",
   "description": "Module that transpiles HTML into JS FWK javascript widget",
   "main": "transpiller.js",
   "scripts": {
