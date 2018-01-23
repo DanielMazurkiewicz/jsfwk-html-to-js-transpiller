@@ -10,7 +10,7 @@ module.exports = (str, fwkVarName) => {
   let styleMode = false;
   let styleContent;
 
-  let scriptsStatic = [];
+  let scriptsStaticBefore = [];
   let scriptMode = false;
   let scriptContent;
 
@@ -21,6 +21,8 @@ module.exports = (str, fwkVarName) => {
   let bodyAttributeBindings = {};
   let bodyEventBindings = {};
   let bodyAfterScripts = [];
+
+  let scriptsStaticAfter = [];
 
   let bodyAttributeBindingsLength = 0;
   let bodyEventBindingsLength = 0;
@@ -118,7 +120,11 @@ module.exports = (str, fwkVarName) => {
         }
     } else {
         if (attributesList.static) {
-            scriptsStatic.push(scriptContent);
+            if (attributesList.after) {
+              scriptsStaticAfter.push(scriptContent);
+            } else {
+              scriptsStaticBefore.push(scriptContent);
+            }
         } else if (attributesList.before) {
             bodyBeforeScripts.push(scriptContent);
         } else if (attributesList.after) {
@@ -288,8 +294,8 @@ module.exports = (str, fwkVarName) => {
     result += parseStyles();
   }
 
-  if (scriptsStatic.length) {
-    result += scriptsStatic.map(element=>element.content).join('\n') + '\n';
+  if (scriptsStaticBefore.length) {
+    result += scriptsStaticBefore.map(element=>element.content).join('\n') + '\n';
   }
 
   result += 'module.exports=(parent,parentNode)=>{';
@@ -357,5 +363,10 @@ module.exports = (str, fwkVarName) => {
   }
 
   result += 'return main;}';
+
+  if (scriptsStaticAfter.length) {
+    result += scriptsStaticAfter.map(element=>element.content).join('\n') + '\n';
+  }
+
   return result;
 }
