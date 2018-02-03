@@ -107,6 +107,11 @@ module.exports = (str, fwkVarName) => {
                         eventName: first,
                         script: scriptContent
                     }
+                    if (attributesList.all) {
+                        event.eventName = '*' + first.substr(1);
+                    } else {
+                        event.eventName = first;
+                    }
                     if (!eventsList) {
                         bodyEventBindings[arguments[i]] = [event];
                     } else {

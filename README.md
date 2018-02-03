@@ -92,10 +92,26 @@ Example:
 ```html
 <button(plusOne)>+1</button>
 <script(&click, plusOne)>
-    alert('button clicked');
+    alert('button clicked: ' + evt.target.innerHTML);
 </script>
 ```
 This example will assign a 'click' event to button named plusOne;
+Note that event objects are passed to event scripts via "evt" variable;
+
+### <SCRIPT(&...) all>
+
+This will assign event to DOM element in capture mode
+
+Example:
+```html
+<div(plusOne)>
+  <button>+1</button>
+</div>
+<script(&click, plusOne) all>
+    alert('button clicked');
+    evt.stopPropagation();
+</script>
+```
 
 
 ### <STYLE>
